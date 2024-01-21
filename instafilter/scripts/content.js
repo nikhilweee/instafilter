@@ -13,7 +13,9 @@ function searchInShadowDOM(element) {
     if (sponsored) {
       // If yes, dim the search result
       const parent = shadowRoot.host.closest("li");
-      parent.style = "opacity: 0.25";
+      if (parent) {
+        parent.style.filter = "opacity(0.25) grayscale(1)";
+      }
     }
   }
 
